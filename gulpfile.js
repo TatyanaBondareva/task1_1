@@ -9,6 +9,7 @@ var prettify = require('gulp-html-prettify');
 var browserSync = require('browser-sync');
 var notify = require('gulp-notify');
 var scsslint = require('gulp-scss-lint');
+var util = require('gulp-util');
 var reload = browserSync.reload;
 var paths = {
   html:['index.html'],
@@ -34,7 +35,7 @@ gulp.task('callback', function() {
   });
 });
 
-gulp.task('scss-lint', function() {
+gulp.task('scsslint', function() {
   return gulp.src('src/styles/*.scss')
   .pipe(scsslint());
 });
@@ -49,14 +50,17 @@ gulp.task('watch', function() {
 	gulp.watch('src/**/*.njk', ['nunjucks']);
 });
 
-gulp.task('default', ['nunjucks', 'watch']);
+gulp.task('util', function() {
+  return util.log('Gulp is running!');
+});
+
 
 gulp.task('html', function() {
   gulp.src(paths.html)
   .pipe(reload({stream: true}));
 });
 
-gulp.task('minscss', function() {
+gulp.task('mincss', function() {
   return gulp.src(paths.scss)
   .pipe(sass().on('error', sass.logError))
   .pipe(minifyCss())
@@ -80,4 +84,4 @@ gulp.task('watcher', function() {
   gulp.watch(paths.html, ['html']);
 });
 
-gulp.task('default', ['nunjucks', 'watcher', 'browserSync']);
+gulp.task('default', ['scsslint', 'html', 'sass', 'nunjucks', 'util', 'watcher', 'browserSync']);
