@@ -9,30 +9,32 @@ var prettify = require('gulp-html-prettify');
 var browserSync = require('browser-sync');
 var notify = require('gulp-notify');
 var scsslint = require('gulp-scss-lint');
+var clean = require('gulp-clean');
 var util = require('gulp-util');
 var reload = browserSync.reload;
 var paths = {
-  html:['index.html'],
-  scss:['main.scss']
+  njk:['./src/**/*.njk'],
+  scss:['./src/styles/*.scss']
 };
 
+gulp.task('icons', function() {
+  gulp.src('dist/assets/icons/*.png')
+  .pipe(clean());
+  gulp.src('src/assets/icons/*.png')
+  .pipe(gulp.dest('dist/assets/icons'));
+});
+
+gulp.task('img', function() {
+  gulp.src('dist/assets/img/*.png')
+  .pipe(clean());
+  gulp.src('src/assets/img/*.png')
+  .pipe(gulp.dest('dist/assets/img'))
+});
 
 gulp.task('sass', function () {
   gulp.src('src/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/'));
-});
-
-gulp.task('stream', ['sass'], function() {
-    return watch('src/styles/*.scss', {ignoreInitial: false})
-    .pipe(gulp.dest('build'));
-});
-
-gulp.task('callback', function() {
-  return watch('src/styles/*.scss', function() {
-    gulp.src('src/styles/*.scss')
-    .pipe(gulp.dest('build'));
-  });
 });
 
 gulp.task('scsslint', function() {
@@ -55,17 +57,15 @@ gulp.task('util', function() {
 });
 
 
-gulp.task('html', function() {
-  gulp.src(paths.html)
+gulp.task('njk', function() {
+  gulp.src(paths.njk)
   .pipe(reload({stream: true}));
 });
 
 gulp.task('mincss', function() {
   return gulp.src(paths.scss)
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss())
-  .pipe(gulp.dest('main'))
-  .pipe.reload({stream: true});
+  .pipe(reload({stream: true}));
 });
 
 gulp.task('browserSync', function() {
@@ -80,8 +80,8 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('watcher', function() {
-  gulp.watch(paths.scss, ['minscss']);
-  gulp.watch(paths.html, ['html']);
+  gulp.watch(paths.scss, ['mincss']);
+  gulp.watch(paths.njk, ['njk']);
 });
 
-gulp.task('default', ['scsslint', 'html', 'sass', 'nunjucks', 'util', 'watcher', 'browserSync']);
+gulp.task('default', ['icons', 'img', 'scsslint', 'njk', 'sass', 'nunjucks', 'sass', 'util', 'watch', 'browserSync', 'watcher']);

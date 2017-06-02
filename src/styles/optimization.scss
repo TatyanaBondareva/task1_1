@@ -1,0 +1,31 @@
+@mixin flexes($fd, $jc) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin background($i, $s, $c) {
+  background-image: $i;
+  background-repeat: no-repeat;
+  background-size: $s;
+  background-color: $c;
+}
+
+
+@mixin font($s, $f, $w, $t) {
+  font-size: $s;
+  font-family: $f;
+  font-weight: $w;
+  text-transform: $t;
+}
+
+$white: rgb(255, 255, 255);
+$red: rgb(155, 36, 45);
+$logo: url(assets/img/logo.png);
+$banner1: url(assets/img/banner1.png);
+$banner3: url(assets/img/banner3.png);

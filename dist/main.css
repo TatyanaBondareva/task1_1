@@ -1,10 +1,46 @@
-header {
-  color: #9b242d;
-  margin: 0%;
-  background-color: LightBlue;
-  padding: 0%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header {
+  background-color: white;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 116px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start; }
+  .header__logo {
+    background-image: url(assets/img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    margin-left: 13.42%;
+    margin-top: 2.3%;
+    padding-bottom: 2.3%;
+    width: 223px;
+    height: 50px; }
+  .header__nav {
+    width: 50%;
+    height: 30%;
+    margin-left: 7.5%;
+    margin-top: 2.94%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .header__nav__checkbox {
+      visibility: hidden; }
+    .header__nav li {
+      display: inline-block;
+      padding-bottom: 2.3%; }
+      .header__nav li a {
+        font-size: 14px;
+        font-family: "Roboto Slab";
+        font-weight: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: block;
+        color: #373838;
+        padding: 7.5px 16.0px; }
