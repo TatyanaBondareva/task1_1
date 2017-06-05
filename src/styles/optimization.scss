@@ -17,15 +17,32 @@
 }
 
 
-@mixin font($s, $f, $w, $t) {
-  font-size: $s;
+@mixin font($f, $c) {
   font-family: $f;
-  font-weight: $w;
-  text-transform: $t;
+  color: $c;
 }
 
+@mixin text-size($s, $w, $t, $h) {
+    font-size: $s;
+    font-weight: $w;
+    text-transform: $t;
+    line-height: $h;
+}
+
+@mixin border($r, $c, $sh, $st) {
+  border-radius: $r;
+  border-color: $c;
+  box-shadow: $sh;
+  border-style: $st;
+}
 $white: rgb(255, 255, 255);
+$green: rgb(70, 166, 81);
 $red: rgb(155, 36, 45);
+$rwhite: rgb(241, 239, 236);
+$shadow-color: rgba(0,0,0,0.07);
 $logo: url(assets/img/logo.png);
-$banner1: url(assets/img/banner1.png);
-$banner3: url(assets/img/banner3.png);
+$logo-2: url(assets/img/logo2.png);
+$banner-1: url(assets/img/banner1.png);
+$banner-3: url(assets/img/banner3.png);
+$banner-6: url(assets/img/banner6.png);
+$banner-7: url(assets/img/banner7.png);

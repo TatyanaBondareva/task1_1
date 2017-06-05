@@ -1,0 +1,177 @@
+@import "optimization.scss";
+
+.banners {
+  @include size(100%, auto);
+  @include flexes(row, flex-start)
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.banner-1 {
+  @include background($banner-1, cover, transparent);
+  @include size(100%, 600px);
+  @include flexes(column, center);
+  padding-top: 2%;
+  align-self: center;
+}
+
+.text-title {
+  @include font("Roboto Slab", $white);
+  &__banner-1 {
+    @include text-size(50px, bold, uppercase, 1.2);
+    align-self: center;
+  }
+  &__banner-4 {
+    @include text-size(40px, bold, none, 1.2);
+    margin-left: 8.12%;
+  }
+  &__banner-5 {
+    @include text-size(40px, 600, none, auto);
+    align-self: flex-end;
+    margin-right: 9.10%;
+    margin-top: 6.77%;
+  }
+}
+
+.text {
+  color: $white;
+  padding: 0;
+  &__banner-1 {
+    @include font("Roboto Slab", auto);
+    @include text-size(24px, 300, none, 1.2);
+    align-self: center;
+    margin-top: 0.3%;
+    padding-bottom: 3.7%;
+  }
+  &__banner-4 {
+    @include font("Roboto", auto);
+    @include text-size(16px, auto, none, 1.375);
+    text-align: left;
+    margin-left: 8.1%;
+  //  margin-top: 2.37%;
+  }
+  &__banner-5 {
+    @include font("Roboto", auto);
+    @include size(59.8%, 39px);
+    @include text-size(16px, 400, none, 1.375);
+    text-align: right;
+    align-self: flex-end;
+    margin-right: 9.10%;
+    margin-top: 1.67%;
+  }
+}
+
+.button {
+  padding: 0;
+  &_active {
+    position: relative;
+    &:active::after {
+      content: attr(data-title);
+      @include font("Roboto Slab", $white);
+      @include text-size(21px, 100, none, auto);
+      position: absolute;
+      left: 160px;
+      top: 65px;
+      background-color: transparent;
+      padding: 15px 35px;
+      border: 3px solid $shadow-color;
+    }
+}
+
+  &__banner-1 {
+    @include font("Open Sans", $green);
+    @include text-size(26px, 700, none, 1.2);
+    @include size(269px, 58px);
+    @include border(100px, transparent,  0 0 0 6px $shadow-color, solid);
+    text-align: center;
+    align-self: center;
+    background-color: $white;
+    outline: none;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+}
+.banner-2 {
+  @include size(38.5%, 316px);
+  @include flexes(row, flex-end);
+  background-color: $rwhite;
+  &__logo-2 {
+    @include background($logo-2, contain, transparent);
+    @include size(51.76%, 62.5px);
+    margin-right: 8%;
+    align-self: center;
+  }
+}
+
+.banner-3 {
+  @include background($banner-3, cover, transparent);
+  @include size(23%, 316px);
+}
+
+.banner-4 {
+  @include flexes(column, center);
+  @include size(38.5%, 316px);
+  background-color: $red;
+}
+
+.green-banners {
+  @include size(61.5%, 633px);
+  @include flexes(column, flex-start);
+}
+
+.banner-5 {
+  background: $green;
+  @include size(100%, 50%);
+  @include flexes(column, flex-start);
+}
+
+.form {
+  align-self: flex-end;
+  margin-right: 9.10%;
+  margin-top: 2.8%;
+  @include flexes(row, center);
+  @include size(397px, 44px);
+  &__input {
+    @include font("Roboto", rgb(75, 172, 87));
+    @include size(69.52%, 100%);
+    @include text-size(16px, auto, none, 1.375);
+    padding-left: 50px;
+    outline: none;
+    background-color: rgba(94, 192, 105, 0.5);
+    border: none;
+  }
+  &__submit {
+    @include text-size(16px, auto, none, auto);
+    @include font("Roboto", $white);
+    @include size(30.48%, 100%);
+    outline: none;
+    background-color: rgb(52, 142, 62);
+    border: none;
+
+  }
+
+}
+.banner-6 {
+  @include background($banner-6, cover, transparent);
+  @include size(100%, 50%);
+}
+.banner-7 {
+  @include background($banner-7, cover, transparent);
+  @include size(38.5%, 633px);
+  @include flexes(column, flex-end);
+}
+.like {
+  @include size(60%, 50%);
+  @include flexes(column, center);
+  background-color: rgb(59, 89, 151);
+  &__facebook-link {
+    align-self: center;
+    text-decoration: none;
+  }
+  &__text {
+    @include font("Roboto", $white);
+    @include text-size(16px, auto, none, 1.375);
+    margin-top: 21.81px;
+    align-self: center;
+  }
+}

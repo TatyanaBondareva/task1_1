@@ -8,31 +8,47 @@
   @include flexes(row, flex-start);
 
   &__logo {
-    @include background($logo, contain, transparent);
+    @include background($logo, cover, transparent);
     margin-left: 13.42%;
     margin-top: 2.3%;
-    padding-bottom: 2.3%;
-    @include size(223px, 50px);
+    //padding-bottom: 2.3%;
+    @include size(225px, 50px);
   }
-
-  &__nav {
+}
+  .menu {
     @include size(50%, 30%);
-    margin-left: 7.5%;
-    margin-top: 2.94%;
     @include flexes(row, space-between);
-    &__checkbox {
+    &_header {
+      margin-left: 7.5%;
+      margin-top: 2.94%;
+    }
+    &__hamburger {
       visibility: hidden;
     }
-    & li {
+    &__list {
+      padding: 0;
+    }
+
+    &__item {
       display: inline-block;
       padding-bottom: 2.3%;
-      & a {
-        @include font(14px, "Roboto Slab", normal, uppercase);
-        text-decoration: none;
-        display: block;
-        color: #373838;
-        padding: 7.5px 16.0px;
-      }
     }
-  }
+    &__link {
+      @include font("Roboto Slab", $white);
+      @include text-size(14px, normal, uppercase, auto);
+      text-decoration: none;
+      display: block;
+      color: #373838;
+      padding: 7.5px 16.0px;
+      &:hover {
+        color: $white;
+        border-radius: 2px;
+        background-color: $red;
+      }
+      &_active {
+        color: $white;
+        border-radius: 2px;
+        background-color: $red;
+        }
+    }
 }

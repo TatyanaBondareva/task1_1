@@ -10,27 +10,63 @@
 <body>
   <header class="header">
     <div class="header__logo"></div>
-    <nav class="header__nav">
-      <input id="check-button" type="checkbox" class="header__nav__checkbox">
+    <nav class="menu menu_header">
+      <input id="check-button" type="checkbox" class="menu__hamburger">
       <label for="check-button"></label>
-      <ul>
-        <li><a class="redColor" href="index.html">HOME</a>
+      <ul class="menu__list">
+        <li class="menu__item"><a class="menu__link menu__link_active" href="index.html">HOME</a>
+        </li class="menu__item">
+        <li class="menu__item"><a class="menu__link" href="index.html">ABOUT US</a>
         </li>
-        <li><a href="index.html">ABOUT US</a>
+        <li class="menu__item"><a class="menu__link" href="index.html">PROJECTS</a>
         </li>
-        <li><a href="index.html">PROJECTS</a>
+        <li class="menu__item"><a class="menu__link" href="index.html">BLOG</a>
         </li>
-        <li><a href="index.html">BLOG</a>
+        <li class="menu__item"><a class="menu__link" href="index.html">EVENTS</a>
         </li>
-        <li><a href="index.html">EVENTS</a>
+        <li class="menu__item"><a class="menu__link" href="index.html">GALLERY</a>
         </li>
-        <li><a href="index.html">GALLERY</a>
-        </li>
-        <li><a href="index.html">CONTACT US</a>
+        <li class="menu__item"><a class="menu__link" href="index.html">CONTACT US</a>
         </li>
       </ul>
     </nav>
   </header>
+
+  <section class="banners">
+    <div class="banner-1">
+      <h1 class="text-title text-title__banner-1">welcome TO MY CHARITY</h1>
+      <p class="text text__banner-1">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+      <button class="button button_active button__banner-1" data-title="Hello! You can donate now!">Donate now</button>
+    </div>
+    <div class="banner-2">
+      <div class="banner-2__logo-2"></div>
+    </div>
+    <div class="banner-3"></div>
+    <div class="banner-4">
+      <h1 class="text-title text-title__banner-4">Donate Now !</h1>
+      <div class="text text__banner-4">Lorem Ipsum is simply dummy text</div>
+    </div>
+    <div class="green-banners">
+      <div class="banner-5">
+        <h1 class="text-title text-title__banner-5">Sign up to newsletter</h1>
+        <form class="form">
+          <input class="form__input" type="text" placeholder="Enter your email">
+          <input class="form__submit" type="submit" value="Subscribe">
+        </form>
+        <p class="text text__banner-5">Lorem Ipsum is simple dummy text of the printing and typeset
+          <br>ing industry. Lorem Ipsum has been the industry's standart dummy text</p>
+      </div>
+      <div class="banner-6"></div>
+    </div>
+    <div class="banner-7">
+      <div class="like">
+        <a class="like__facebook-link" href="https://www.facebook.com">
+          <img src="assets/icons/facebook-link.png">
+        </a>
+        <h5 class="like__text">Like now!</h5>
+      </div>
+    </div>
+  </section>
 
 </body>
 

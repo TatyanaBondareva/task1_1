@@ -21,7 +21,8 @@ gulp.task('icons', function() {
   gulp.src('dist/assets/icons/*.png')
   .pipe(clean());
   gulp.src('src/assets/icons/*.png')
-  .pipe(gulp.dest('dist/assets/icons'));
+  .pipe(gulp.dest('dist/assets/icons'))
+  .pipe(reload({stream: true}));
 });
 
 gulp.task('img', function() {
@@ -29,12 +30,14 @@ gulp.task('img', function() {
   .pipe(clean());
   gulp.src('src/assets/img/*.png')
   .pipe(gulp.dest('dist/assets/img'))
+  .pipe(reload({stream: true}));
 });
 
 gulp.task('sass', function () {
   gulp.src('src/main.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('scsslint', function() {
@@ -50,6 +53,7 @@ gulp.task('nunjucks', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('src/**/*.njk', ['nunjucks']);
+  gulp.watch('src/**/*.scss', ['sass']);
 });
 
 gulp.task('util', function() {
@@ -84,4 +88,4 @@ gulp.task('watcher', function() {
   gulp.watch(paths.njk, ['njk']);
 });
 
-gulp.task('default', ['icons', 'img', 'scsslint', 'njk', 'sass', 'nunjucks', 'sass', 'util', 'watch', 'browserSync', 'watcher']);
+gulp.task('default', ['icons', 'img', 'scsslint', 'njk',  'nunjucks', 'sass', 'util', 'watch', 'browserSync', 'watcher']);
