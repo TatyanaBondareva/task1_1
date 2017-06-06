@@ -1,8 +1,17 @@
 @import "optimization.scss";
 
+.input {
+  &::-webkit-input-placeholder {
+    color: $green !important;
+  }
+  &::-moz-placeholder {
+    color: $green !important;
+  }
+}
+
 .banners {
   @include size(100%, auto);
-  @include flexes(row, flex-start)
+  @include flexes(row, flex-start);
   flex-wrap: wrap;
   padding: 0;
 }
@@ -131,15 +140,17 @@
   margin-top: 2.8%;
   @include flexes(row, center);
   @include size(397px, 44px);
+  background-color: rgb(75, 172, 87);
   &__input {
-    @include font("Roboto", rgb(75, 172, 87));
+    @include font("Roboto", $green);
     @include size(69.52%, 100%);
     @include text-size(16px, auto, none, 1.375);
-    padding-left: 50px;
+    padding-left: 21px;
     outline: none;
-    background-color: rgba(94, 192, 105, 0.5);
+    background-color: $green-form;
     border: none;
-  }
+}
+
   &__submit {
     @include text-size(16px, auto, none, auto);
     @include font("Roboto", $white);
@@ -149,7 +160,6 @@
     border: none;
 
   }
-
 }
 .banner-6 {
   @include background($banner-6, cover, transparent);
@@ -161,17 +171,21 @@
   @include flexes(column, flex-end);
 }
 .like {
-  @include size(60%, 50%);
+  @include size(59%, 50%);
   @include flexes(column, center);
   background-color: rgb(59, 89, 151);
   &__facebook-link {
     align-self: center;
     text-decoration: none;
+    //left: 5%;
+    padding-top: 16.57%;
+  //  padding-right:  1%;
   }
   &__text {
     @include font("Roboto", $white);
-    @include text-size(16px, auto, none, 1.375);
-    margin-top: 21.81px;
+    @include text-size(16px, 400, none, 1.375);
+    padding-top: 25px;
     align-self: center;
+    text-align: center;
   }
 }

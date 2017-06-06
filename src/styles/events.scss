@@ -1,0 +1,114 @@
+@import "optimization.scss";
+
+.events {
+  @include size(100%, auto);
+  @include flexes(column, flex-start);
+  &__title {
+      @include font("Roboto Slab", $gray);
+      @include text-size(50px, 300, none, 1.2);
+      align-self: center;
+      margin-top: 5.76%;
+      padding: 0
+  }
+}
+.october {
+    @include size(68.5%, 100%);
+    @include flexes(row, spase-between);
+    align-self: center;
+    list-style-type: none;
+  /*  margin-left: 15.79%;
+    margin-top: 3.76%;*/
+    background-color: yellow;
+    &__day {
+      @include size(33%, 100%);
+    //  align-self: space-between;
+      background-color: pink;
+      &:not(:first-child){
+        margin-left: 3%;
+      }
+    }
+}
+.day {
+  @include flexes(column, spase-between);
+  align-items: center;
+  &_red {
+    @include colors ($red, $white);
+    @include size(88px, 88px);
+    @include flexes(column, flex-start);
+    &::after {
+      content: '';
+      border: 15px solid transparent;
+      margin-top: 22px;
+      border-top: 15px solid $red;
+      align-self: center;
+      }
+    }
+  &_gray {
+    @include colors ($gray, $white);
+    @include size(88px, 88px);
+    @include flexes(column, flex-start);
+    &::after {
+      content: '';
+      border: 15px solid transparent;
+      margin-top: 22px;
+      border-top: 15px solid $gray;
+      align-self: center;
+    }
+  }
+  &__month {
+      font-size: 50px;
+      font-family: "Roboto Slab";
+      color: rgb(155, 36, 45);
+      line-height: 1.2;
+      text-align: center;
+      align-self: center;
+      margin-top: 5%;
+  }
+  &__title {
+    font-size: 18px;
+    font-family: "Roboto Slab";
+    margin-top: 3%;
+    color: rgb(55, 56, 56);
+    line-height: 1.2;
+    align-self:  center;
+  }
+  &__text {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: rgb(55, 56, 56);
+    line-height: 1.571;
+    text-align: center;
+    /*left: 208.572px;*/
+    top: 10%;
+    /*width: 265px;/*
+    height: 80px;*/
+  }
+  &__link {
+
+    align-self: center;
+    margin-top: 10%;
+  }
+}
+
+.date {
+  @include font("Roboto Slab", $white);
+  @include text-size(36px, 600, none, 1.2);
+  margin-top: 21px;
+  align-self: center;
+}
+.link {
+  @include text-size(14px, auto, uppercase, 1.571);
+  @include size(87px, 36px);
+  @include font("Roboto", $white);
+  @include text-size(14px, auto, uppercase, 1.571);
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  &_red {
+    background-color: $red;
+  }
+  &_gray {
+    background-color: $gray;
+  }
+}

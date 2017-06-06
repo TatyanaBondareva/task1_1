@@ -35,10 +35,18 @@
   box-shadow: $sh;
   border-style: $st;
 }
+
+@mixin colors ($b, $c) {
+  background-color: $b;
+  color: $c;
+}
+
 $white: rgb(255, 255, 255);
 $green: rgb(70, 166, 81);
 $red: rgb(155, 36, 45);
+$gray: rgb(55, 56, 56);
 $rwhite: rgb(241, 239, 236);
+$green-form: rgb(94, 192, 105);
 $shadow-color: rgba(0,0,0,0.07);
 $logo: url(assets/img/logo.png);
 $logo-2: url(assets/img/logo2.png);

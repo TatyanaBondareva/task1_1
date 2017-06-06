@@ -65,6 +65,12 @@ html {
       border-radius: 2px;
       background-color: #9b242d; }
 
+.input::-webkit-input-placeholder {
+  color: #46a651 !important; }
+
+.input::-moz-placeholder {
+  color: #46a651 !important; }
+
 .banners {
   width: 100%;
   height: auto;
@@ -241,19 +247,20 @@ html {
   flex-direction: row;
   justify-content: center;
   width: 397px;
-  height: 44px; }
+  height: 44px;
+  background-color: #4bac57; }
   .form__input {
     font-family: "Roboto";
-    color: #4bac57;
+    color: #46a651;
     width: 69.52%;
     height: 100%;
     font-size: 16px;
     font-weight: auto;
     text-transform: none;
     line-height: 1.375;
-    padding-left: 50px;
+    padding-left: 21px;
     outline: none;
-    background-color: rgba(94, 192, 105, 0.5);
+    background-color: #5ec069;
     border: none; }
   .form__submit {
     font-size: 16px;
@@ -288,7 +295,7 @@ html {
   justify-content: flex-end; }
 
 .like {
-  width: 60%;
+  width: 59%;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -296,13 +303,144 @@ html {
   background-color: #3b5997; }
   .like__facebook-link {
     align-self: center;
-    text-decoration: none; }
+    text-decoration: none;
+    padding-top: 16.57%; }
   .like__text {
     font-family: "Roboto";
     color: white;
     font-size: 16px;
-    font-weight: auto;
+    font-weight: 400;
     text-transform: none;
     line-height: 1.375;
-    margin-top: 21.81px;
+    padding-top: 25px;
+    align-self: center;
+    text-align: center; }
+
+.events {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .events__title {
+    font-family: "Roboto Slab";
+    color: #373838;
+    font-size: 50px;
+    font-weight: 300;
+    text-transform: none;
+    line-height: 1.2;
+    align-self: center;
+    margin-top: 5.76%;
+    padding: 0; }
+
+.october {
+  width: 68.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: spase-between;
+  align-self: center;
+  list-style-type: none;
+  /*  margin-left: 15.79%;
+    margin-top: 3.76%;*/
+  background-color: yellow; }
+  .october__day {
+    width: 33%;
+    height: 100%;
+    background-color: pink; }
+    .october__day:not(:first-child) {
+      margin-left: 3%; }
+
+.day {
+  display: flex;
+  flex-direction: column;
+  justify-content: spase-between;
+  align-items: center; }
+  .day_red {
+    background-color: #9b242d;
+    color: white;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .day_red::after {
+      content: '';
+      border: 15px solid transparent;
+      margin-top: 22px;
+      border-top: 15px solid #9b242d;
+      align-self: center; }
+  .day_gray {
+    background-color: #373838;
+    color: white;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .day_gray::after {
+      content: '';
+      border: 15px solid transparent;
+      margin-top: 22px;
+      border-top: 15px solid #373838;
+      align-self: center; }
+  .day__month {
+    font-size: 50px;
+    font-family: "Roboto Slab";
+    color: #9b242d;
+    line-height: 1.2;
+    text-align: center;
+    align-self: center;
+    margin-top: 5%; }
+  .day__title {
+    font-size: 18px;
+    font-family: "Roboto Slab";
+    margin-top: 3%;
+    color: #373838;
+    line-height: 1.2;
     align-self: center; }
+  .day__text {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: #373838;
+    line-height: 1.571;
+    text-align: center;
+    /*left: 208.572px;*/
+    top: 10%;
+    /*width: 265px;/*
+    height: 80px;*/ }
+  .day__link {
+    align-self: center;
+    margin-top: 10%; }
+
+.date {
+  font-family: "Roboto Slab";
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: none;
+  line-height: 1.2;
+  margin-top: 21px;
+  align-self: center; }
+
+.link {
+  font-size: 14px;
+  font-weight: auto;
+  text-transform: uppercase;
+  line-height: 1.571;
+  width: 87px;
+  height: 36px;
+  font-family: "Roboto";
+  color: white;
+  font-size: 14px;
+  font-weight: auto;
+  text-transform: uppercase;
+  line-height: 1.571;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  border: none; }
+  .link_red {
+    background-color: #9b242d; }
+  .link_gray {
+    background-color: #373838; }
