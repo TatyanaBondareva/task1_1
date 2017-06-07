@@ -7,7 +7,7 @@
       @include font("Roboto Slab", $gray);
       @include text-size(50px, 300, none, 1.2);
       align-self: center;
-      margin-top: 5.76%;
+      margin-top: 3%;
       padding: 0
   }
 }
@@ -16,16 +16,15 @@
     @include flexes(row, spase-between);
     align-self: center;
     list-style-type: none;
-  /*  margin-left: 15.79%;
-    margin-top: 3.76%;*/
+    margin-top: 3%;
     background-color: yellow;
     &__day {
       @include size(33%, 100%);
     //  align-self: space-between;
       background-color: pink;
-      &:not(:first-child){
+    /*  &:not(:first-child) {
         margin-left: 3%;
-      }
+      }*/
     }
 }
 .day {
@@ -56,18 +55,18 @@
     }
   }
   &__month {
-      font-size: 50px;
+      font-size: 30px;
       font-family: "Roboto Slab";
       color: rgb(155, 36, 45);
       line-height: 1.2;
       text-align: center;
       align-self: center;
-      margin-top: 5%;
-  }
+      margin-top: 7%;
+    }
   &__title {
     font-size: 18px;
     font-family: "Roboto Slab";
-    margin-top: 3%;
+    margin-top: 5%;
     color: rgb(55, 56, 56);
     line-height: 1.2;
     align-self:  center;
@@ -79,14 +78,9 @@
     line-height: 1.571;
     text-align: center;
     /*left: 208.572px;*/
-    top: 10%;
+    margin-top: 2.5%;
     /*width: 265px;/*
     height: 80px;*/
-  }
-  &__link {
-
-    align-self: center;
-    margin-top: 10%;
   }
 }
 
@@ -96,15 +90,23 @@
   margin-top: 21px;
   align-self: center;
 }
+
 .link {
-  @include text-size(14px, auto, uppercase, 1.571);
-  @include size(87px, 36px);
-  @include font("Roboto", $white);
-  @include text-size(14px, auto, uppercase, 1.571);
-  outline: none;
-  text-align: center;
-  text-decoration: none;
-  border: none;
+  @include flexes(row, center);
+  align-items: center;
+  align-self: center;
+  margin-top: 5%;
+
+  &__text {
+    @include font("Roboto", $white);
+    @include text-size(14px, auto, uppercase, 1.571);
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+    @include size(87px, 36px);
+  }
+
   &_red {
     background-color: $red;
   }
